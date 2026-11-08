@@ -10,10 +10,11 @@ Mod de Minecraft sobre o ciclo de produção tradicional do **queijo minas** e d
 3. [Cadeia de Produção e Fluxograma](#cadeia-de-produção-e-fluxograma)
 4. [Itens e Blocos](#itens-e-blocos)
 5. [Mecânicas Detalhadas](#mecânicas-detalhadas)
-6. [Tabela de Alimentos e Efeitos](#tabela-de-alimentos-e-efeitos)
-7. [Todas as Receitas de Crafting e Forno](#todas-as-receitas-de-crafting-e-forno)
-8. [Guia de Instalação](#guia-de-instalação)
-9. [Como Compilar e Testar Localmente](#como-compilar-e-testar-localmente)
+6. [Loot em Baús pelo Mundo (Vilas e Dungeons)](#loot-em-baús-pelo-mundo-vilas-e-dungeons)
+7. [Tabela de Alimentos e Efeitos](#tabela-de-alimentos-e-efeitos)
+8. [Todas as Receitas de Crafting e Forno](#todas-as-receitas-de-crafting-e-forno)
+9. [Guia de Instalação](#guia-de-instalação)
+10. [Como Compilar e Testar Localmente](#como-compilar-e-testar-localmente)
 
 ---
 
@@ -42,7 +43,7 @@ O repositório está organizado em três branches para cobrir as versões da lin
 
 ```
 1. Mandioca:
-   Grama Baixa (5%) -> Mandioca -> Plantio em Terra Arada -> Colheita (multiplica)
+   Grama Baixa / Samambaia (5%) ou Baús de Vila -> Mandioca -> Plantio em Terra Arada -> Colheita (multiplica)
    Mandioca (Bancada) -> Mandioca Ralada -> Forno/Defumador (Secagem) -> Polvilho
    Mandioca -> Forno / Defumador / Fogueira -> Mandioca Cozida
 
@@ -66,7 +67,7 @@ O repositório está organizado em três branches para cobrir as versões da lin
 ## Itens e Blocos
 
 ### Agricultura e Ingredientes
-- **Mandioca (`Cassava`):** Raiz obtida da grama ou colheita. Pode ser comida crua, cozida ou plantada.
+- **Mandioca (`Cassava`):** Raiz obtida da grama, samambaia, baús de estruturas ou colheita. Pode ser comida crua, cozida ou plantada.
 - **Mandioca Ralada (`Grated Cassava`):** Produto da mandioca triturada na bancada.
 - **Polvilho (`Cassava Starch`):** Amido seco obtido após assar a mandioca ralada. Ingrediente-chave do pão de queijo.
 - **Coagulador Bovino (`Bovine Abomasum`):** Órgão bovino cru com enzimas naturais de coagulação (drop de vaca).
@@ -114,6 +115,18 @@ O repositório está organizado em três branches para cobrir as versões da lin
   - Frescal: sinal 5
   - Meia-Cura: sinal 10
   - Curado: sinal 15
+
+---
+
+## Loot em Baús pelo Mundo (Vilas e Dungeons)
+
+Além da coleta natural no mundo, itens do mod podem ser encontrados explorando estruturas:
+
+| Estrutura / Baú | Itens Possíveis | Quantidade | Chance |
+|---|---|---|---|
+| **Casas de Vila** *(Planície, Savana, Taiga, Neve, Deserto)* | Mandioca / Polvilho / Pão de Queijo | `1–4` / `1–3` / `1–3` | `45%` / `30%` / `25%` |
+| **Açougueiro e Pastor de Vila** | Queijo Minas Frescal / Coalho / Queijo Meia-Cura | `1–2` / `1–2` / `1` | `40%` / `35%` / `20%` |
+| **Dungeons, Minas Abandonadas, Fortalezas, Postos Pillager e Mansões** | Queijo Meia-Cura / Queijo Curado / Mandioca / Pão de Queijo | `1–2` / `1–2` / `2–4` / `1–4` | `35%` / `30%` / `30%` / `25%` |
 
 ---
 
