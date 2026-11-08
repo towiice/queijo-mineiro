@@ -1,4 +1,4 @@
-# Queijo Mineiro 🧀 (Fabric 1.21.4)
+# Queijo Mineiro (Fabric 1.21.4)
 
 Mod de Minecraft sobre a produção de **queijo minas** e **pão de queijo**.
 
