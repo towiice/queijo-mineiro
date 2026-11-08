@@ -356,12 +356,10 @@ def item_massa_de_pao_de_queijo():
     rng = random.Random(9)
     img = Img()
     massa = rampa("#9a8a6a", "#bdae8e", "#d8cbad", "#eae1ca", "#f6f1e2", "#fffcf4")
-    # três bolinhas cruas
-    elipse(img, 8.0, 5.4, 3.5, 3.2, massa, rng)
-    elipse(img, 4.6, 10.6, 3.6, 3.3, massa, rng)
-    elipse(img, 11.4, 10.6, 3.6, 3.3, massa, rng)
-    # pontinhos de queijo na massa
-    pontilhar(img, rng, 0.07, [cor("#f2dc8a"), cor("#e8cc70")])
+    # Uma bolinha crua (mesmo porte e formato do pão assado, mas crua e clara)
+    elipse(img, 8.0, 8.9, 6.4, 5.5, massa, rng, 0.12)
+    # Pedacinhos visíveis de queijo ralado na massa crua
+    pontilhar(img, rng, 0.08, [cor("#e8cc70"), cor("#f2dc8a")], filtro=lambda x, y: 5 < y < 13)
     contorno(img, 0.5)
     return img
 
