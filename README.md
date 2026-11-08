@@ -1,26 +1,38 @@
-# Queijo Mineiro (Fabric 1.21.4)
+# Queijo Mineiro (Fabric 1.21.4 – 1.21.11)
 
 Mod de Minecraft sobre o ciclo de produção tradicional do **queijo minas** e do **pão de queijo**.
 
 ---
 
 ## Índice
-1. [Requisitos](#requisitos)
-2. [Cadeia de Produção e Fluxograma](#cadeia-de-produção-e-fluxograma)
-3. [Itens e Blocos](#itens-e-blocos)
-4. [Mecânicas Detalhadas](#mecânicas-detalhadas)
-5. [Tabela de Alimentos e Efeitos](#tabela-de-alimentos-e-efeitos)
-6. [Todas as Receitas de Crafting e Forno](#todas-as-receitas-de-crafting-e-forno)
-7. [Guia de Instalação](#guia-de-instalação)
-8. [Como Compilar e Testar Localmente](#como-compilar-e-testar-localmente)
+1. [Versões Suportadas e Branches](#versões-suportadas-e-branches)
+2. [Requisitos](#requisitos)
+3. [Cadeia de Produção e Fluxograma](#cadeia-de-produção-e-fluxograma)
+4. [Itens e Blocos](#itens-e-blocos)
+5. [Mecânicas Detalhadas](#mecânicas-detalhadas)
+6. [Tabela de Alimentos e Efeitos](#tabela-de-alimentos-e-efeitos)
+7. [Todas as Receitas de Crafting e Forno](#todas-as-receitas-de-crafting-e-forno)
+8. [Guia de Instalação](#guia-de-instalação)
+9. [Como Compilar e Testar Localmente](#como-compilar-e-testar-localmente)
+
+---
+
+## Versões Suportadas e Branches
+
+O repositório está organizado em duas branches para cobrir toda a linha **1.21.4 até 1.21.11**:
+
+| Versões do Minecraft | Branch no Git | Arquivo `.jar` correspondente |
+|---|---|---|
+| **1.21.4 e 1.21.5** | `1.21.4-1.21.5` | `queijo-mineiro-1.0.4+1.21.4-1.21.5.jar` |
+| **1.21.6, 1.21.7, 1.21.8, 1.21.9, 1.21.10 e 1.21.11** | `1.21.6-1.21.11` | `queijo-mineiro-1.0.4+1.21.6-1.21.11.jar` |
 
 ---
 
 ## Requisitos
 
-- **Minecraft:** 1.21.4
+- **Minecraft:** 1.21.4 até 1.21.11 (veja a tabela acima para escolher o `.jar` da sua versão)
 - **Mod Loader:** Fabric Loader (>= 0.16.10)
-- **API:** Fabric API (compatível com 1.21.4)
+- **API:** Fabric API (compatível com a sua versão do Minecraft)
 - **Java:** Java 21 (Temurin recomendado)
 
 ---
@@ -148,10 +160,12 @@ Mod de Minecraft sobre o ciclo de produção tradicional do **queijo minas** e d
 
 ## Guia de Instalação
 
-1. Baixe e instale o [Fabric Loader para 1.21.4](https://fabricmc.net/use/installer/).
-2. Baixe o [Fabric API para 1.21.4](https://curseforge.com/minecraft/mc-mods/fabric-api) e insira na pasta `.minecraft/mods`.
-3. Baixe o arquivo `queijo-mineiro-X.X.X.jar` na aba [Releases](https://github.com/towiice/queijo-mineiro/releases) e coloque na mesma pasta `mods`.
-4. Inicie o jogo no perfil Fabric 1.21.4.
+1. Baixe e instale o [Fabric Loader](https://fabricmc.net/use/installer/) para a sua versão do Minecraft (`1.21.4` a `1.21.11`).
+2. Baixe o [Fabric API](https://curseforge.com/minecraft/mc-mods/fabric-api) correspondente à sua versão e insira na pasta `.minecraft/mods`.
+3. Baixe o arquivo `.jar` correspondente à sua versão na aba [Releases](https://github.com/towiice/queijo-mineiro/releases):
+   - Para **1.21.4 ou 1.21.5**: `queijo-mineiro-1.0.4+1.21.4-1.21.5.jar`
+   - Para **1.21.6 até 1.21.11**: `queijo-mineiro-1.0.4+1.21.6-1.21.11.jar`
+4. Coloque o arquivo na pasta `mods` e inicie o jogo no perfil Fabric.
 
 ---
 
