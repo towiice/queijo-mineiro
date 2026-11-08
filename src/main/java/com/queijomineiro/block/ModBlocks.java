@@ -1,43 +1,42 @@
 package com.queijomineiro.block;
 
 import com.queijomineiro.QueijoMineiro;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.MapColor;
-import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.sound.BlockSoundGroup;
-
 import java.util.function.Function;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 
 public final class ModBlocks {
 	private ModBlocks() {
 	}
 
 	public static final Block PLANTACAO_DE_MANDIOCA = register("plantacao_de_mandioca", MandiocaCropBlock::new,
-			AbstractBlock.Settings.create()
-					.mapColor(MapColor.DARK_GREEN)
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.PLANT)
 					.noCollision()
-					.ticksRandomly()
-					.breakInstantly()
-					.sounds(BlockSoundGroup.CROP)
-					.pistonBehavior(PistonBehavior.DESTROY));
+					.randomTicks()
+					.instabreak()
+					.sound(SoundType.CROP)
+					.pushReaction(PushReaction.POPPED));
 
 	public static final Block FORMA_DE_QUEIJO = register("forma_de_queijo", FormaDeQueijoBlock::new,
-			AbstractBlock.Settings.create()
-					.mapColor(MapColor.OAK_TAN)
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.WOOD)
 					.strength(0.8f)
-					.sounds(BlockSoundGroup.WOOD)
-					.nonOpaque()
-					.ticksRandomly());
+					.sound(SoundType.WOOD)
+					.noOcclusion()
+					.randomTicks());
 
-	private static Block register(String name, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
-		RegistryKey<Block> key = RegistryKey.of(RegistryKeys.BLOCK, QueijoMineiro.id(name));
-		Block block = factory.apply(settings.registryKey(key));
-		return Registry.register(Registries.BLOCK, key, block);
+	private static Block register(String name, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties settings) {
+		ResourceKey<Block> key = ResourceKey.create(Registries.BLOCK, QueijoMineiro.id(name));
+		Block block = factory.apply(settings.setId(key));
+		return Registry.register(BuiltInRegistries.BLOCK, key, block);
 	}
 
 	public static void initialize() {

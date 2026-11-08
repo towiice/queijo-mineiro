@@ -2,11 +2,12 @@ package com.queijomineiro.loot;
 
 import com.queijomineiro.item.ModItems;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
-import net.minecraft.loot.LootPool;
-import net.minecraft.loot.condition.RandomChanceLootCondition;
-import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ConstantValue;
 
 /**
  * Como obter os ingredientes "de origem":
@@ -19,29 +20,29 @@ public final class ModLootTableModifiers {
 	private ModLootTableModifiers() {
 	}
 
-	private static final Identifier VACA = Identifier.ofVanilla("entities/cow");
-	private static final Identifier MOOSHROOM = Identifier.ofVanilla("entities/mooshroom");
-	private static final Identifier GRAMA = Identifier.ofVanilla("blocks/short_grass");
+	private static final Identifier VACA = Identifier.withDefaultNamespace("entities/cow");
+	private static final Identifier MOOSHROOM = Identifier.withDefaultNamespace("entities/mooshroom");
+	private static final Identifier GRAMA = Identifier.withDefaultNamespace("blocks/short_grass");
 
 	public static void initialize() {
 		LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
 			if (!source.isBuiltin()) {
 				return;
 			}
-			Identifier id = key.getValue();
+			Identifier id = key.identifier();
 
 			if (VACA.equals(id) || MOOSHROOM.equals(id)) {
-				tableBuilder.pool(LootPool.builder()
-						.rolls(ConstantLootNumberProvider.create(1))
-						.conditionally(RandomChanceLootCondition.builder(0.35f))
-						.with(ItemEntry.builder(ModItems.COAGULADOR_BOVINO)));
+				tableBuilder.withPool(LootPool.lootPool()
+						.setRolls(Holder.direct(new ConstantValue(1)))
+						.when(LootItemRandomChanceCondition.randomChance(0.35f))
+						.add(LootItem.lootTableItem(ModItems.COAGULADOR_BOVINO)));
 			}
 
 			if (GRAMA.equals(id)) {
-				tableBuilder.pool(LootPool.builder()
-						.rolls(ConstantLootNumberProvider.create(1))
-						.conditionally(RandomChanceLootCondition.builder(0.05f))
-						.with(ItemEntry.builder(ModItems.MANDIOCA)));
+				tableBuilder.withPool(LootPool.lootPool()
+						.setRolls(Holder.direct(new ConstantValue(1)))
+						.when(LootItemRandomChanceCondition.randomChance(0.05f))
+						.add(LootItem.lootTableItem(ModItems.MANDIOCA)));
 			}
 		});
 	}
