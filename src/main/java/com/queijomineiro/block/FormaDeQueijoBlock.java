@@ -73,14 +73,25 @@ public class FormaDeQueijoBlock extends Block {
 	@Override
 	protected ActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos,
 										 PlayerEntity player, Hand hand, BlockHitResult hit) {
-		if (state.get(CURA) == VAZIA && stack.isOf(ModItems.MASSA_DE_QUEIJO)) {
-			if (!world.isClient()) {
-				world.setBlockState(pos, state.with(CURA, FRESCO), Block.NOTIFY_ALL);
-				stack.decrementUnlessCreative(1, player);
-				world.playSound(null, pos, SoundEvents.BLOCK_MUD_PLACE, SoundCategory.BLOCKS, 1.0f, 1.2f);
-				world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
+		if (state.get(CURA) == VAZIA) {
+			int novoEstagio = -1;
+			if (stack.isOf(ModItems.MASSA_DE_QUEIJO) || stack.isOf(ModItems.QUEIJO_MINAS_FRESCAL)) {
+				novoEstagio = FRESCO;
+			} else if (stack.isOf(ModItems.QUEIJO_MEIA_CURA)) {
+				novoEstagio = MEIA_CURA;
+			} else if (stack.isOf(ModItems.QUEIJO_CURADO)) {
+				novoEstagio = CURADO;
 			}
-			return ActionResult.SUCCESS;
+
+			if (novoEstagio != -1) {
+				if (!world.isClient()) {
+					world.setBlockState(pos, state.with(CURA, novoEstagio), Block.NOTIFY_ALL);
+					stack.decrementUnlessCreative(1, player);
+					world.playSound(null, pos, SoundEvents.BLOCK_WOOD_PLACE, SoundCategory.BLOCKS, 1.0f, 1.1f);
+					world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
+				}
+				return ActionResult.SUCCESS;
+			}
 		}
 		return ActionResult.PASS_TO_DEFAULT_BLOCK_ACTION;
 	}
