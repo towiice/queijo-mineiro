@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "queijo_mineiro:mandioca"
+  ],
+  "result": {
+    "id": "queijo_mineiro:mandioca_ralada",
+    "count": 1
+  }
+}

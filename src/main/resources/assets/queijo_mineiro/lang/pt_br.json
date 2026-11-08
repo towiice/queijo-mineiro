@@ -1,0 +1,17 @@
+{
+  "item.queijo_mineiro.mandioca": "Mandioca",
+  "item.queijo_mineiro.mandioca_ralada": "Mandioca Ralada",
+  "item.queijo_mineiro.mandioca_cozida": "Mandioca Cozida",
+  "item.queijo_mineiro.polvilho": "Polvilho",
+  "item.queijo_mineiro.coalho": "Coalho",
+  "item.queijo_mineiro.massa_de_queijo": "Massa de Queijo",
+  "item.queijo_mineiro.queijo_minas_frescal": "Queijo Minas Frescal",
+  "item.queijo_mineiro.queijo_meia_cura": "Queijo Minas Meia-Cura",
+  "item.queijo_mineiro.queijo_curado": "Queijo Minas Curado",
+  "item.queijo_mineiro.massa_de_pao_de_queijo": "Massa de Pão de Queijo",
+  "item.queijo_mineiro.pao_de_queijo": "Pão de Queijo",
+  "block.queijo_mineiro.forma_de_queijo": "Forma de Queijo",
+  "block.queijo_mineiro.plantacao_de_mandioca": "Plantação de Mandioca",
+  "itemGroup.queijo_mineiro.principal": "Queijo Mineiro",
+  "tag.item.queijo_mineiro.queijos": "Queijos"
+}

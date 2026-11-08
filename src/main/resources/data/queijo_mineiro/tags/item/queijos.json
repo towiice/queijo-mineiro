@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "queijo_mineiro:queijo_minas_frescal",
+    "queijo_mineiro:queijo_meia_cura",
+    "queijo_mineiro:queijo_curado"
+  ]
+}

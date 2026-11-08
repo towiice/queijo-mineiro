@@ -1,0 +1,28 @@
+{
+	"schemaVersion": 1,
+	"id": "queijo_mineiro",
+	"version": "${version}",
+	"name": "Queijo Mineiro",
+	"description": "Plante mandioca, faça polvilho, coalhe o leite, cure queijo minas (frescal, meia-cura, curado) e asse pão de queijo!",
+	"authors": [
+		"Você"
+	],
+	"contact": {},
+	"license": "MIT",
+	"icon": "assets/queijo_mineiro/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.queijomineiro.QueijoMineiro"
+		],
+		"client": [
+			"com.queijomineiro.QueijoMineiroClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "1.21.4",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

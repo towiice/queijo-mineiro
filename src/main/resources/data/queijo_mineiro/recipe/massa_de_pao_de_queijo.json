@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "queijo_mineiro:polvilho",
+    "queijo_mineiro:polvilho",
+    "#queijo_mineiro:queijos",
+    "minecraft:egg",
+    "minecraft:milk_bucket"
+  ],
+  "result": {
+    "id": "queijo_mineiro:massa_de_pao_de_queijo",
+    "count": 6
+  }
+}

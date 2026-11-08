@@ -1,0 +1,7 @@
+{
+  "parent": "queijo_mineiro:block/template_forma_de_queijo",
+  "textures": {
+    "lado": "queijo_mineiro:block/forma_de_queijo_lado",
+    "fundo": "queijo_mineiro:block/forma_de_queijo_fundo"
+  }
+}

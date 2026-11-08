@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:milk_bucket",
+    "queijo_mineiro:coalho"
+  ],
+  "result": {
+    "id": "queijo_mineiro:massa_de_queijo",
+    "count": 1
+  }
+}

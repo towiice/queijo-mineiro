@@ -1,0 +1,17 @@
+{
+  "item.queijo_mineiro.mandioca": "Cassava",
+  "item.queijo_mineiro.mandioca_ralada": "Grated Cassava",
+  "item.queijo_mineiro.mandioca_cozida": "Boiled Cassava",
+  "item.queijo_mineiro.polvilho": "Cassava Starch",
+  "item.queijo_mineiro.coalho": "Rennet",
+  "item.queijo_mineiro.massa_de_queijo": "Cheese Curd",
+  "item.queijo_mineiro.queijo_minas_frescal": "Fresh Minas Cheese",
+  "item.queijo_mineiro.queijo_meia_cura": "Half-Cured Minas Cheese",
+  "item.queijo_mineiro.queijo_curado": "Cured Minas Cheese",
+  "item.queijo_mineiro.massa_de_pao_de_queijo": "Cheese Bread Dough",
+  "item.queijo_mineiro.pao_de_queijo": "Pão de Queijo",
+  "block.queijo_mineiro.forma_de_queijo": "Cheese Mold",
+  "block.queijo_mineiro.plantacao_de_mandioca": "Cassava Crop",
+  "itemGroup.queijo_mineiro.principal": "Minas Cheese",
+  "tag.item.queijo_mineiro.queijos": "Cheeses"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "ingredient": "queijo_mineiro:mandioca",
+  "result": {
+    "id": "queijo_mineiro:mandioca_cozida"
+  },
+  "experience": 0.35,
+  "cookingtime": 100
+}

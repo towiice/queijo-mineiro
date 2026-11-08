@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "cura=0": {
+      "model": "queijo_mineiro:block/forma_de_queijo"
+    },
+    "cura=1": {
+      "model": "queijo_mineiro:block/forma_de_queijo_fresco"
+    },
+    "cura=2": {
+      "model": "queijo_mineiro:block/forma_de_queijo_meia_cura"
+    },
+    "cura=3": {
+      "model": "queijo_mineiro:block/forma_de_queijo_curado"
+    }
+  }
+}

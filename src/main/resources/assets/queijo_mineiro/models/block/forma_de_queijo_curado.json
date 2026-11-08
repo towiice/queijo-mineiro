@@ -1,0 +1,9 @@
+{
+  "parent": "queijo_mineiro:block/template_forma_de_queijo_cheia",
+  "textures": {
+    "lado": "queijo_mineiro:block/forma_de_queijo_lado",
+    "fundo": "queijo_mineiro:block/forma_de_queijo_fundo",
+    "queijo_topo": "queijo_mineiro:block/queijo_curado_topo",
+    "queijo_lado": "queijo_mineiro:block/queijo_curado_lado"
+  }
+}

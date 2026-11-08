@@ -1,0 +1,157 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "#lado"
+  },
+  "elements": [
+    {
+      "from": [
+        2,
+        0,
+        2
+      ],
+      "to": [
+        14,
+        1,
+        14
+      ],
+      "faces": {
+        "down": {
+          "texture": "#fundo",
+          "cullface": "down"
+        },
+        "up": {
+          "texture": "#fundo"
+        },
+        "north": {
+          "texture": "#lado"
+        },
+        "south": {
+          "texture": "#lado"
+        },
+        "west": {
+          "texture": "#lado"
+        },
+        "east": {
+          "texture": "#lado"
+        }
+      }
+    },
+    {
+      "from": [
+        2,
+        1,
+        2
+      ],
+      "to": [
+        14,
+        5,
+        3
+      ],
+      "faces": {
+        "up": {
+          "texture": "#lado"
+        },
+        "north": {
+          "texture": "#lado"
+        },
+        "south": {
+          "texture": "#lado"
+        },
+        "west": {
+          "texture": "#lado"
+        },
+        "east": {
+          "texture": "#lado"
+        }
+      }
+    },
+    {
+      "from": [
+        2,
+        1,
+        13
+      ],
+      "to": [
+        14,
+        5,
+        14
+      ],
+      "faces": {
+        "up": {
+          "texture": "#lado"
+        },
+        "north": {
+          "texture": "#lado"
+        },
+        "south": {
+          "texture": "#lado"
+        },
+        "west": {
+          "texture": "#lado"
+        },
+        "east": {
+          "texture": "#lado"
+        }
+      }
+    },
+    {
+      "from": [
+        2,
+        1,
+        3
+      ],
+      "to": [
+        3,
+        5,
+        13
+      ],
+      "faces": {
+        "up": {
+          "texture": "#lado"
+        },
+        "north": {
+          "texture": "#lado"
+        },
+        "south": {
+          "texture": "#lado"
+        },
+        "west": {
+          "texture": "#lado"
+        },
+        "east": {
+          "texture": "#lado"
+        }
+      }
+    },
+    {
+      "from": [
+        13,
+        1,
+        3
+      ],
+      "to": [
+        14,
+        5,
+        13
+      ],
+      "faces": {
+        "up": {
+          "texture": "#lado"
+        },
+        "north": {
+          "texture": "#lado"
+        },
+        "south": {
+          "texture": "#lado"
+        },
+        "west": {
+          "texture": "#lado"
+        },
+        "east": {
+          "texture": "#lado"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "queijo_mineiro:block/mandioca_stage3"
+  }
+}

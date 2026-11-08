@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "ingredient": "queijo_mineiro:mandioca_ralada",
+  "result": {
+    "id": "queijo_mineiro:polvilho"
+  },
+  "experience": 0.1,
+  "cookingtime": 200
+}

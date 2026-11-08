@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "ingredient": "queijo_mineiro:massa_de_pao_de_queijo",
+  "result": {
+    "id": "queijo_mineiro:pao_de_queijo"
+  },
+  "experience": 0.35,
+  "cookingtime": 600
+}

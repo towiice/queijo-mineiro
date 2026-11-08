@@ -1,0 +1,74 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "queijo_mineiro:forma_de_queijo"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "queijo_mineiro:forma_de_queijo",
+          "properties": {
+            "cura": "1"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "queijo_mineiro:queijo_minas_frescal"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "queijo_mineiro:forma_de_queijo",
+          "properties": {
+            "cura": "2"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "queijo_mineiro:queijo_meia_cura"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "queijo_mineiro:forma_de_queijo",
+          "properties": {
+            "cura": "3"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "queijo_mineiro:queijo_curado"
+        }
+      ]
+    }
+  ],
+  "random_sequence": "queijo_mineiro:blocks/forma_de_queijo"
+}

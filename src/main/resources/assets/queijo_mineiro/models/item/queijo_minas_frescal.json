@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "queijo_mineiro:item/queijo_minas_frescal"
+  }
+}
