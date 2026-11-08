@@ -253,6 +253,22 @@ def item_polvilho():
     return img
 
 
+def item_coagulador_bovino():
+    # Pedaço de abomaso / estômago bovino natural (carnoso, marrom/avermelhado, estilo órgão/carne crua)
+    rng = random.Random(77)
+    img = Img()
+    carne = rampa("#4a1f18", "#6a2e22", "#8c3e2e", "#aa4e3c", "#c6624c", "#dd7a64")
+    # Formato orgânico irregular com dobras
+    elipse(img, 7.5, 8.5, 5.8, 4.8, carne, rng, 0.16)
+    elipse(img, 10.0, 7.0, 3.5, 3.2, carne, rng, 0.14)
+    elipse(img, 5.5, 10.0, 3.8, 3.0, carne, rng, 0.14)
+    # Dobras e veios naturais do estômago
+    pontilhar(img, rng, 0.12, [cor("#3a1610"), cor("#522018")])
+    pontilhar(img, rng, 0.08, [cor("#e69280"), cor("#f2aba0")])
+    contorno(img, 0.45)
+    return img
+
+
 def item_coalho():
     # Frasquinho de coalho líquido, desenhado à mão.
     pal = {
@@ -487,6 +503,7 @@ def main():
         "mandioca_ralada": item_mandioca_ralada,
         "mandioca_cozida": item_mandioca_cozida,
         "polvilho": item_polvilho,
+        "coagulador_bovino": item_coagulador_bovino,
         "coalho": item_coalho,
         "massa_de_queijo": item_massa_de_queijo,
         "queijo_minas_frescal": item_queijo_minas_frescal,

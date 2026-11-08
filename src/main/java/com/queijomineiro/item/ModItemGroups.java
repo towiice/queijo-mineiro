@@ -23,6 +23,7 @@ public final class ModItemGroups {
 						entries.add(ModItems.MANDIOCA_RALADA);
 						entries.add(ModItems.POLVILHO);
 						entries.add(ModItems.MANDIOCA_COZIDA);
+						entries.add(ModItems.COAGULADOR_BOVINO);
 						entries.add(ModItems.COALHO);
 						entries.add(ModItems.MASSA_DE_QUEIJO);
 						entries.add(ModItems.FORMA_DE_QUEIJO);
@@ -48,6 +49,7 @@ public final class ModItemGroups {
 			entries.add(ModItems.MANDIOCA);
 			entries.add(ModItems.MANDIOCA_RALADA);
 			entries.add(ModItems.POLVILHO);
+			entries.add(ModItems.COAGULADOR_BOVINO);
 			entries.add(ModItems.COALHO);
 			entries.add(ModItems.MASSA_DE_QUEIJO);
 			entries.add(ModItems.MASSA_DE_PAO_DE_QUEIJO);

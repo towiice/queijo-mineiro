@@ -25,6 +25,7 @@ public final class ModItems {
 	public static final Item POLVILHO = register("polvilho", Item::new, new Item.Settings());
 
 	// --- Queijo ---
+	public static final Item COAGULADOR_BOVINO = register("coagulador_bovino", Item::new, new Item.Settings());
 	public static final Item COALHO = register("coalho", Item::new, new Item.Settings());
 	public static final Item MASSA_DE_QUEIJO = register("massa_de_queijo", Item::new,
 			new Item.Settings().maxCount(16));

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "#queijo_mineiro:flores_de_coalho",
+    "minecraft:glass_bottle"
+  ],
+  "result": {
+    "id": "queijo_mineiro:coalho",
+    "count": 1
+  }
+}

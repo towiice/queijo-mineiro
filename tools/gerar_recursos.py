@@ -19,7 +19,7 @@ def ns(x):
 
 
 # ---------------- Itens simples (sprite 2D) ----------------
-ITENS_2D = ["mandioca", "mandioca_ralada", "mandioca_cozida", "polvilho", "coalho", "massa_de_queijo",
+ITENS_2D = ["mandioca", "mandioca_ralada", "mandioca_cozida", "polvilho", "coagulador_bovino", "coalho", "massa_de_queijo",
             "queijo_minas_frescal", "queijo_meia_cura", "queijo_curado", "massa_de_pao_de_queijo", "pao_de_queijo"]
 for it in ITENS_2D:
     w(f"{A}/models/item/{it}.json", {"parent": "minecraft:item/generated", "textures": {"layer0": ns(f"item/{it}")}})
@@ -77,6 +77,7 @@ pt = {
     "item.queijo_mineiro.mandioca_ralada": "Mandioca Ralada",
     "item.queijo_mineiro.mandioca_cozida": "Mandioca Cozida",
     "item.queijo_mineiro.polvilho": "Polvilho",
+    "item.queijo_mineiro.coagulador_bovino": "Coagulador Bovino",
     "item.queijo_mineiro.coalho": "Coalho",
     "item.queijo_mineiro.massa_de_queijo": "Massa de Queijo",
     "item.queijo_mineiro.queijo_minas_frescal": "Queijo Minas Frescal",
@@ -94,6 +95,7 @@ en = {
     "item.queijo_mineiro.mandioca_ralada": "Grated Cassava",
     "item.queijo_mineiro.mandioca_cozida": "Boiled Cassava",
     "item.queijo_mineiro.polvilho": "Cassava Starch",
+    "item.queijo_mineiro.coagulador_bovino": "Bovine Abomasum",
     "item.queijo_mineiro.coalho": "Rennet",
     "item.queijo_mineiro.massa_de_queijo": "Cheese Curd",
     "item.queijo_mineiro.queijo_minas_frescal": "Fresh Minas Cheese",
@@ -113,6 +115,14 @@ w(f"{A}/lang/en_us.json", en)
 w(f"{D}/tags/item/queijos.json", {"replace": False, "values": [
     ns("queijo_minas_frescal"), ns("queijo_meia_cura"), ns("queijo_curado")]})
 
+w(f"{D}/tags/item/flores_de_coalho.json", {"replace": False, "values": [
+    "minecraft:cornflower",
+    "minecraft:dandelion",
+    "minecraft:poppy",
+    "minecraft:allium",
+    "minecraft:oxeye_daisy"
+]})
+
 # ---------------- Receitas ----------------
 R = f"{D}/recipe"
 
@@ -123,6 +133,17 @@ def resultado(item, n=1):
 
 w(f"{R}/mandioca_ralada.json", {"type": "minecraft:crafting_shapeless", "category": "misc",
                                 "ingredients": [ns("mandioca")], "result": resultado("mandioca_ralada")})
+
+# Coalho Animal: Coagulador Bovino + Frasco de Água (ou Frasco de Vidro)
+w(f"{R}/coalho_animal.json", {"type": "minecraft:crafting_shapeless", "category": "misc",
+                              "ingredients": [ns("coagulador_bovino"), "minecraft:glass_bottle"],
+                              "result": resultado("coalho")})
+
+# Coalho Vegetal: Flor de Cardo/Silvestre + Frasco de Vidro
+w(f"{R}/coalho_vegetal.json", {"type": "minecraft:crafting_shapeless", "category": "misc",
+                               "ingredients": ["#queijo_mineiro:flores_de_coalho", "minecraft:glass_bottle"],
+                               "result": resultado("coalho")})
+
 w(f"{R}/massa_de_queijo.json", {"type": "minecraft:crafting_shapeless", "category": "misc",
                                 "ingredients": ["minecraft:milk_bucket", ns("coalho")],
                                 "result": resultado("massa_de_queijo")})

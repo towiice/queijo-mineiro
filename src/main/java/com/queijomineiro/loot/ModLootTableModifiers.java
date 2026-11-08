@@ -34,7 +34,7 @@ public final class ModLootTableModifiers {
 				tableBuilder.pool(LootPool.builder()
 						.rolls(ConstantLootNumberProvider.create(1))
 						.conditionally(RandomChanceLootCondition.builder(0.35f))
-						.with(ItemEntry.builder(ModItems.COALHO)));
+						.with(ItemEntry.builder(ModItems.COAGULADOR_BOVINO)));
 			}
 
 			if (GRAMA.equals(id)) {
