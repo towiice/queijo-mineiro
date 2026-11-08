@@ -1,4 +1,4 @@
-# Queijo Mineiro (Fabric 1.21.4 – 1.21.11)
+# Queijo Mineiro (Fabric 1.21.x e 26.x)
 
 Mod de Minecraft sobre o ciclo de produção tradicional do **queijo minas** e do **pão de queijo**.
 
@@ -19,21 +19,22 @@ Mod de Minecraft sobre o ciclo de produção tradicional do **queijo minas** e d
 
 ## Versões Suportadas e Branches
 
-O repositório está organizado em duas branches para cobrir toda a linha **1.21.4 até 1.21.11**:
+O repositório está organizado em três branches para cobrir as versões da linha **1.21.x** (a partir da 1.21.4) e toda a linha **26.x**:
 
-| Versões do Minecraft | Branch no Git | Arquivo `.jar` correspondente |
-|---|---|---|
-| **1.21.4 e 1.21.5** | `1.21.4-1.21.5` | `queijo-mineiro-1.0.4+1.21.4-1.21.5.jar` |
-| **1.21.6, 1.21.7, 1.21.8, 1.21.9, 1.21.10 e 1.21.11** | `1.21.6-1.21.11` | `queijo-mineiro-1.0.4+1.21.6-1.21.11.jar` |
+| Versões do Minecraft | Branch no Git | Java | Arquivo `.jar` correspondente |
+|---|---|---|---|
+| **1.21.4 – 1.21.5** | `1.21.4-1.21.5` | Java 21 | `queijo-mineiro-1.0.4+1.21.4-1.21.5.jar` |
+| **1.21.6 – 1.21.11** | `1.21.6-1.21.11` | Java 21 | `queijo-mineiro-1.0.4+1.21.6-1.21.11.jar` |
+| **26.x** *(26.1, 26.2, 26.3+)* | `26.x` | Java 25 | `queijo-mineiro-1.0.4+26.x.jar` |
 
 ---
 
 ## Requisitos
 
-- **Minecraft:** 1.21.4 até 1.21.11 (veja a tabela acima para escolher o `.jar` da sua versão)
-- **Mod Loader:** Fabric Loader (>= 0.16.10)
+- **Minecraft:** `1.21.4` até `1.21.11` ou `26.x` (veja a tabela acima para escolher o `.jar` da sua versão)
+- **Mod Loader:** Fabric Loader (`>= 0.16.10` para `1.21.x` / `>= 0.19.2` para `26.x`)
 - **API:** Fabric API (compatível com a sua versão do Minecraft)
-- **Java:** Java 21 (Temurin recomendado)
+- **Java:** Java 21 (para `1.21.x`) ou Java 25 (para `26.x`)
 
 ---
 
@@ -160,11 +161,12 @@ O repositório está organizado em duas branches para cobrir toda a linha **1.21
 
 ## Guia de Instalação
 
-1. Baixe e instale o [Fabric Loader](https://fabricmc.net/use/installer/) para a sua versão do Minecraft (`1.21.4` a `1.21.11`).
+1. Baixe e instale o [Fabric Loader](https://fabricmc.net/use/installer/) para a sua versão do Minecraft (`1.21.x` ou `26.x`).
 2. Baixe o [Fabric API](https://curseforge.com/minecraft/mc-mods/fabric-api) correspondente à sua versão e insira na pasta `.minecraft/mods`.
 3. Baixe o arquivo `.jar` correspondente à sua versão na aba [Releases](https://github.com/towiice/queijo-mineiro/releases):
-   - Para **1.21.4 ou 1.21.5**: `queijo-mineiro-1.0.4+1.21.4-1.21.5.jar`
-   - Para **1.21.6 até 1.21.11**: `queijo-mineiro-1.0.4+1.21.6-1.21.11.jar`
+   - Para **1.21.4 – 1.21.5**: `queijo-mineiro-1.0.4+1.21.4-1.21.5.jar`
+   - Para **1.21.6 – 1.21.11**: `queijo-mineiro-1.0.4+1.21.6-1.21.11.jar`
+   - Para **26.x**: `queijo-mineiro-1.0.4+26.x.jar`
 4. Coloque o arquivo na pasta `mods` e inicie o jogo no perfil Fabric.
 
 ---
@@ -177,8 +179,7 @@ O projeto inclui o wrapper do Gradle e um executável de testes rápido.
 # Executar o jogo de desenvolvimento com o mod:
 .\testar_mod.bat
 
-# Ou via comando terminal direto:
-$env:JAVA_HOME="C:\Program Files\Eclipse Adoptium\jdk-21.0.13.9-hotspot"
+# Ou via comando terminal direto (1.21.x usa JDK 21 / 26.x usa JDK 25):
 .\gradlew.bat runClient
 
 # Compilar um novo arquivo .jar:
