@@ -32,7 +32,7 @@ Massa de Pão de Queijo ──fornalha / defumador (2x mais rápido) / fogueira�
 | Queijo Minas Frescal | 3 | 0.6 | come rápido (1.2 s) |
 | Queijo Minas Meia-Cura | 5 | 0.8 | Regeneração I (5 s) |
 | Queijo Minas Curado | 6 | 1.0 | Absorção I (30 s) |
-| **Pão de Queijo** | 5 | 1.0 | come rápido (1 s), Velocidade I (30 s) + Regeneração I (4 s) |
+| **Pão de Queijo** | 6 | 1.2 | come rápido (1 s), sempre comível, Pressa I (20 s) |
 
 (Pão vanilla = 5 / 0.6.)
 

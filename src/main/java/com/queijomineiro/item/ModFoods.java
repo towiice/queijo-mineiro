@@ -44,13 +44,14 @@ public final class ModFoods {
 					new StatusEffectInstance(StatusEffects.ABSORPTION, 30 * SEG, 0)), 1.0f))
 			.build();
 
-	// Pão de queijo quentinho: come rápido, dá energia (Velocidade) e Regeneração.
+	// Pão de queijo quentinho: comida de conforto de alto nível!
+	// Nutrição 6, saturação 1.2 (nível cenoura dourada) e come rápido (1.0s).
+	// Efeito temático: Pressa I (Haste) por 20 segundos (disposição para trabalhar/minerar).
 	public static final FoodComponent PAO_DE_QUEIJO = new FoodComponent.Builder()
-			.nutrition(5).saturationModifier(1.0f).build();
+			.nutrition(6).saturationModifier(1.2f).alwaysEdible().build();
 	public static final ConsumableComponent PAO_DE_QUEIJO_CONSUMO = ConsumableComponents.food()
 			.consumeSeconds(1.0f)
 			.consumeEffect(new ApplyEffectsConsumeEffect(List.of(
-					new StatusEffectInstance(StatusEffects.SPEED, 30 * SEG, 0),
-					new StatusEffectInstance(StatusEffects.REGENERATION, 4 * SEG, 0)), 1.0f))
+					new StatusEffectInstance(StatusEffects.HASTE, 20 * SEG, 0)), 1.0f))
 			.build();
 }
