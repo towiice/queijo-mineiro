@@ -14,5 +14,6 @@
   "block.queijo_mineiro.forma_de_queijo": "Cheese Mold",
   "block.queijo_mineiro.plantacao_de_mandioca": "Cassava Crop",
   "itemGroup.queijo_mineiro.principal": "Minas Cheese",
-  "tag.item.queijo_mineiro.queijos": "Cheeses"
+  "tag.item.queijo_mineiro.queijos": "Cheeses",
+  "tag.item.queijo_mineiro.flores_de_coalho": "Curdling Flowers"
 }
