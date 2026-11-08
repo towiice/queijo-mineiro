@@ -140,8 +140,13 @@ public class FormaDeQueijoBlock extends Block {
 		return true;
 	}
 
-	@Override
+	// Usado pelo Minecraft 1.21.6, 1.21.7 e 1.21.8 (3 parâmetros)
 	protected int getComparatorOutput(BlockState state, World world, BlockPos pos) {
+		return state.get(CURA) * 5; // 0, 5, 10, 15
+	}
+
+	// Usado pelo Minecraft 1.21.9, 1.21.10 e 1.21.11 (4 parâmetros)
+	protected int getComparatorOutput(BlockState state, World world, BlockPos pos, net.minecraft.util.math.Direction direction) {
 		return state.get(CURA) * 5; // 0, 5, 10, 15
 	}
 
