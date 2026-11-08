@@ -1,75 +1,173 @@
 # Queijo Mineiro (Fabric 1.21.4)
 
-Mod de Minecraft sobre a produção de **queijo minas** e **pão de queijo**.
+Mod de Minecraft sobre o ciclo de produção tradicional do **queijo minas** e do **pão de queijo**.
 
-## Cadeia de produção
+---
+
+## Índice
+1. [Requisitos](#requisitos)
+2. [Cadeia de Produção e Fluxograma](#cadeia-de-produção-e-fluxograma)
+3. [Itens e Blocos](#itens-e-blocos)
+4. [Mecânicas Detalhadas](#mecânicas-detalhadas)
+5. [Tabela de Alimentos e Efeitos](#tabela-de-alimentos-e-efeitos)
+6. [Todas as Receitas de Crafting e Forno](#todas-as-receitas-de-crafting-e-forno)
+7. [Guia de Instalação](#guia-de-instalação)
+8. [Como Compilar e Testar Localmente](#como-compilar-e-testar-localmente)
+
+---
+
+## Requisitos
+
+- **Minecraft:** 1.21.4
+- **Mod Loader:** Fabric Loader (>= 0.16.10)
+- **API:** Fabric API (compatível com 1.21.4)
+- **Java:** Java 21 (Temurin recomendado)
+
+---
+
+## Cadeia de Produção e Fluxograma
 
 ```
-Grama baixa (5%) ──► Mandioca ──plantar em terra arada──► Plantação (8 estágios)
-Mandioca ──bancada──► Mandioca Ralada ──fornalha (secar)──► Polvilho
-Mandioca ──fornalha/defumador/fogueira──► Mandioca Cozida
+1. Mandioca:
+   Grama Baixa (5%) -> Mandioca -> Plantio em Terra Arada -> Colheita (multiplica)
+   Mandioca (Bancada) -> Mandioca Ralada -> Forno/Defumador (Secagem) -> Polvilho
+   Mandioca -> Forno / Defumador / Fogueira -> Mandioca Cozida
 
-Vaca/Mooshroom (35%) ──► Coalho
-Balde de Leite + Coalho ──bancada──► Massa de Queijo   (o balde volta)
-Massa de Queijo ──clique na Forma de Queijo──► Fresco ─► Meia-cura ─► Curado
-                                           (clique com a mão vazia para desenformar)
+2. Coalho (Dois Caminhos):
+   Animal: Vaca/Mooshroom (35%) -> Coagulador Bovino + Frasco de Vidro / Garrafa com Água -> Frasco de Coalho
+   Vegetal: Flores Silvestres (Cornflower, Dandelion, etc.) + Frasco de Vidro / Garrafa com Água -> Frasco de Coalho
 
-2 Polvilho + Queijo (qualquer) + Ovo + Balde de Leite ──► 6 Massa de Pão de Queijo
-Massa de Pão de Queijo ──fornalha / defumador (2x mais rápido) / fogueira──► Pão de Queijo
+3. Queijo Minas e Cura:
+   Balde de Leite + Frasco de Coalho -> Massa de Queijo (Balde vazio retorna)
+   Massa de Queijo na Forma -> Frescal (1) -> Meia-Cura (2) -> Curado (3)
+   * Clique com a mão vazia para desenformar o queijo.
+   * Clique com o queijo na forma vazia para reenformar.
+
+4. Pão de Queijo:
+   2x Polvilho + 1x Queijo (qualquer tipo) + 1x Ovo + 1x Balde de Leite -> 6x Massa de Pão de Queijo
+   Massa de Pão de Queijo -> Forno / Defumador (2x rápido) / Fogueira -> Pão de Queijo
 ```
 
-**Forma de Queijo**: `S S` / `SSS` com lajes de madeira (qualquer tipo).
-- A cura acontece por *random ticks* (~3–4 min por estágio no padrão).
-- **Não cura tomando chuva** — deixe sob um teto.
-- Comparador lê o estágio (0 / 5 / 10 / 15) — dá pra automatizar.
-- Quebrar a forma devolve a forma + o queijo do estágio atual.
+---
 
-## Comidas
+## Itens e Blocos
 
-| Item | Fome | Saturação | Bônus |
-|---|---|---|---|
-| Mandioca Cozida | 6 | 0.7 | — |
-| Queijo Minas Frescal | 3 | 0.6 | come rápido (1.2 s) |
-| Queijo Minas Meia-Cura | 5 | 0.8 | Regeneração I (5 s) |
-| Queijo Minas Curado | 6 | 1.0 | Absorção I (30 s) |
-| **Pão de Queijo** | 6 | 1.2 | come rápido (1 s), sempre comível, Pressa I (20 s) |
+### Agricultura e Ingredientes
+- **Mandioca (`Cassava`):** Raiz obtida da grama ou colheita. Pode ser comida crua, cozida ou plantada.
+- **Mandioca Ralada (`Grated Cassava`):** Produto da mandioca triturada na bancada.
+- **Polvilho (`Cassava Starch`):** Amido seco obtido após assar a mandioca ralada. Ingrediente-chave do pão de queijo.
+- **Coagulador Bovino (`Bovine Abomasum`):** Órgão bovino cru com enzimas naturais de coagulação (drop de vaca).
+- **Coalho (`Rennet`):** Frasco enzimático usado para talhar o leite.
+- **Massa de Queijo (`Cheese Curd`):** Coalhada fresca escorrida pronta para enformar.
+- **Massa de Pão de Queijo (`Cheese Bread Dough`):** Bolinha crua temperada com queijo, ovo, leite e polvilho.
 
-(Pão vanilla = 5 / 0.6.)
+### Blocos
+- **Plantação de Mandioca (`Cassava Crop`):** Planta de 8 estágios de crescimento (0 a 7). Suporta farinha de osso (Bone Meal) e encantamento Fortuna na colheita.
+- **Forma de Queijo (`Cheese Mold`):** Bloco funcional feito com 5 lajes de madeira. Cura queijo através de random ticks sob abrigo. Emite sinal de comparador redstone.
 
-## Compilar e testar
+### Alimentos Prontos
+- **Mandioca Cozida (`Boiled Cassava`):** Alimento básico.
+- **Queijo Minas Frescal (`Fresh Minas Cheese`):** Queijo leve e de consumo rápido.
+- **Queijo Minas Meia-Cura (`Half-Cured Minas Cheese`):** Queijo com tempo intermediário de maturação.
+- **Queijo Minas Curado (`Cured Minas Cheese`):** Queijo maturado de casca firme e alta saciedade.
+- **Pão de Queijo (`Pão de Queijo`):** Alimento tradicional de alto nível com consumo acelerado e concessão de Pressa I.
 
-Requer **Java 21** (Temurin). Na pasta do projeto:
+---
+
+## Mecânicas Detalhadas
+
+### 1. Cultivo da Mandioca
+- Plante a raiz de `Cassava` em terra arada próxima à água.
+- A planta cresce em 8 estágios.
+- Quando madura, quebre para coletar múltiplas raízes. O encantamento Fortuna aumenta a quantidade obtida.
+- Mandioca e mandioca ralada podem ser usadas no Composteiro (65% e 50% de chance, respectivamente).
+
+### 2. Produção de Coalho (Realismo e Opções)
+- **Coalho Animal:** Vacas e Mooshrooms possuem 35% de chance de dropar `Coagulador Bovino` (aumenta com saque/looting). Junte com frasco de vidro ou garrafa de água na bancada.
+- **Coalho Vegetal:** Coleta pacífica usando flores ricas em enzimas coagulantes (Cornflower/Cardo, Dandelion, Poppy, Allium, Oxeye Daisy) combinadas com frasco de vidro ou garrafa de água.
+
+### 3. Maturação e Forma de Queijo
+- Coloque a `Forma de Queijo` no chão, preferencialmente coberta por um teto.
+- Clique com o botão direito segurando a `Massa de Queijo` para colocar o queijo no molde (Estágio 1 - Fresco).
+- **Chuva:** O queijo interrompe a cura caso esteja exposto diretamente à chuva.
+- **Random Ticks:** A cada intervalo de tempo, o queijo avança de estágio emitindo partículas verdes:
+  - Estágio 1: Frescal
+  - Estágio 2: Meia-Cura
+  - Estágio 3: Curado
+- **Interação:** Clique com a mão vazia para desenformar a qualquer momento.
+- **Reenformar:** É possível recolocar o queijo (Frescal, Meia-Cura ou Curado) de volta em uma forma vazia.
+- **Redstone:** Um Comparador ligado à forma emite sinais de força:
+  - Vazia: sinal 0
+  - Frescal: sinal 5
+  - Meia-Cura: sinal 10
+  - Curado: sinal 15
+
+---
+
+## Tabela de Alimentos e Efeitos
+
+| Alimento | Nutrição | Saturação | Tempo de Consumo | Efeito Concedido | Regra Especial |
+|---|---|---|---|---|---|
+| **Mandioca Cozida** | 6 (3 pernas) | 0.7 | 1.6 s (normal) | Nenhum | - |
+| **Queijo Minas Frescal** | 3 (1.5 pernas) | 0.6 | 1.2 s (rápido) | Nenhum | - |
+| **Queijo Minas Meia-Cura** | 5 (2.5 pernas) | 0.8 | 1.6 s (normal) | **Regeneração I** (5 s) | - |
+| **Queijo Minas Curado** | 6 (3 pernas) | 1.0 | 1.6 s (normal) | **Absorção I** (30 s - 2 corações amarelos) | - |
+| **Pão de Queijo** | 6 (3 pernas) | 1.2 (elite) | 1.0 s (muito rápido) | **Pressa I / Haste** (20 s) | **Sempre comível** (mesmo de barriga cheia) |
+
+---
+
+## Todas as Receitas de Crafting e Forno
+
+### Bancada de Trabalho (`Crafting Table` - Sem forma fixa / Shapeless)
+1. **Mandioca Ralada:**
+   `1x Mandioca`
+2. **Coalho Animal:**
+   `1x Coagulador Bovino` + `1x Frasco de Vidro ou Garrafa com Água`
+3. **Coalho Vegetal:**
+   `1x Flor (Cornflower, Dandelion, Poppy, Allium, Oxeye Daisy)` + `1x Frasco de Vidro ou Garrafa com Água`
+4. **Massa de Queijo:**
+   `1x Balde de Leite` + `1x Frasco de Coalho` *(o balde de ferro vazio retorna)*
+5. **Massa de Pão de Queijo (Rende 6):**
+   `2x Polvilho` + `1x Queijo (Frescal, Meia-Cura ou Curado)` + `1x Ovo` + `1x Balde de Leite` *(o balde de ferro vazio retorna)*
+
+### Bancada de Trabalho (`Crafting Table` - Com formato / Shaped)
+1. **Forma de Queijo:**
+   - Padrão em "U" usando 5 lajes de qualquer madeira:
+     `[ Laje ] [      ] [ Laje ]`
+     `[ Laje ] [ Laje ] [ Laje ]`
+
+### Fornos (Fornalha, Defumador e Fogueira)
+- **Polvilho:** Secar `Mandioca Ralada` na fornalha ou defumador.
+- **Mandioca Cozida:** Cozinhar `Mandioca` na fornalha, defumador ou fogueira.
+- **Pão de Queijo:** Assar `Massa de Pão de Queijo`:
+  - Na Fornalha convencional (tempo padrão).
+  - No Defumador (tempo reduzido pela metade).
+  - Na Fogueira (assamento lento sem consumo de combustível).
+
+---
+
+## Guia de Instalação
+
+1. Baixe e instale o [Fabric Loader para 1.21.4](https://fabricmc.net/use/installer/).
+2. Baixe o [Fabric API para 1.21.4](https://curseforge.com/minecraft/mc-mods/fabric-api) e insira na pasta `.minecraft/mods`.
+3. Baixe o arquivo `queijo-mineiro-X.X.X.jar` na aba [Releases](https://github.com/towiice/queijo-mineiro/releases) e coloque na mesma pasta `mods`.
+4. Inicie o jogo no perfil Fabric 1.21.4.
+
+---
+
+## Como Compilar e Testar Localmente
+
+O projeto inclui o wrapper do Gradle e um executável de testes rápido.
 
 ```powershell
-.\gradlew.bat build        # gera build\libs\queijo-mineiro-1.0.0.jar
-.\gradlew.bat runClient    # abre o Minecraft de desenvolvimento com o mod
-```
+# Executar o jogo de desenvolvimento com o mod:
+.\testar_mod.bat
 
-Para jogar: copie o `.jar` de `build/libs` (o que **não** termina em `-sources`) para a pasta
-`mods` de uma instalação **Fabric Loader 1.21.4** junto com o **Fabric API** 1.21.4.
+# Ou via comando terminal direto:
+$env:JAVA_HOME="C:\Program Files\Eclipse Adoptium\jdk-21.0.13.9-hotspot"
+.\gradlew.bat runClient
 
-## Texturas
-
-Todas as texturas são pixel art 16×16 geradas por [`tools/gerar_texturas.py`](tools/gerar_texturas.py)
-(Python puro, sem dependências). Edite paletas/formas e rode:
-
-```powershell
-python tools\gerar_texturas.py
-```
-
-Uma prévia de todas fica em `tools/preview/todas_as_texturas.png`.
-Os JSONs (modelos, receitas, loot tables, traduções) são gerados por `tools/gerar_recursos.py`.
-
-## Estrutura
-
-```
-src/main/java/com/queijomineiro/
-  QueijoMineiro.java          inicialização (registros, compostagem)
-  QueijoMineiroClient.java    render layers (cutout)
-  block/  ModBlocks, MandiocaCropBlock, FormaDeQueijoBlock
-  item/   ModItems, ModFoods, ModItemGroups
-  loot/   ModLootTableModifiers (coalho das vacas, mandioca da grama)
-src/main/resources/
-  assets/queijo_mineiro/  blockstates, items, models, textures, lang (pt_br, en_us)
-  data/queijo_mineiro/    recipe, loot_table, tags
+# Compilar um novo arquivo .jar:
+.\gradlew.bat build
+# O arquivo gerado estará em: build/libs/queijo-mineiro-X.X.X.jar
 ```

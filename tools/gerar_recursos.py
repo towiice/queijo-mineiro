@@ -134,15 +134,21 @@ def resultado(item, n=1):
 w(f"{R}/mandioca_ralada.json", {"type": "minecraft:crafting_shapeless", "category": "misc",
                                 "ingredients": [ns("mandioca")], "result": resultado("mandioca_ralada")})
 
-# Coalho Animal: Coagulador Bovino + Frasco de Água (ou Frasco de Vidro)
+# Coalho Animal: Coagulador Bovino + Frasco de Vidro ou Garrafa de Água/Poção
 w(f"{R}/coalho_animal.json", {"type": "minecraft:crafting_shapeless", "category": "misc",
                               "ingredients": [ns("coagulador_bovino"), "minecraft:glass_bottle"],
                               "result": resultado("coalho")})
+w(f"{R}/coalho_animal_com_agua.json", {"type": "minecraft:crafting_shapeless", "category": "misc",
+                                       "ingredients": [ns("coagulador_bovino"), "minecraft:potion"],
+                                       "result": resultado("coalho")})
 
-# Coalho Vegetal: Flor de Cardo/Silvestre + Frasco de Vidro
+# Coalho Vegetal: Flor de Cardo/Silvestre + Frasco de Vidro ou Garrafa de Água/Poção
 w(f"{R}/coalho_vegetal.json", {"type": "minecraft:crafting_shapeless", "category": "misc",
                                "ingredients": ["#queijo_mineiro:flores_de_coalho", "minecraft:glass_bottle"],
                                "result": resultado("coalho")})
+w(f"{R}/coalho_vegetal_com_agua.json", {"type": "minecraft:crafting_shapeless", "category": "misc",
+                                        "ingredients": ["#queijo_mineiro:flores_de_coalho", "minecraft:potion"],
+                                        "result": resultado("coalho")})
 
 w(f"{R}/massa_de_queijo.json", {"type": "minecraft:crafting_shapeless", "category": "misc",
                                 "ingredients": ["minecraft:milk_bucket", ns("coalho")],
